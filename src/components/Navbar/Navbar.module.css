@@ -1,0 +1,23 @@
+.nav {
+    background: #fff;
+    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.12);
+}
+
+.items {
+    list-style-type: none;
+    margin: 20px 10px 0 0;
+}
+
+
+.item a{
+    display: block;
+    color: #7a7e84;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 15px 10px;
+}
+
+.item a.active {
+    background: #E0F3F7;
+    border-radius: 4px;
+}

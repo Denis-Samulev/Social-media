@@ -1,0 +1,18 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogs h1 {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 20px;
+}
+
+.dialogs {
+    background: gold;
+}
+
+/*.dialogs .active {*/
+/*    color: gold;*/
+/*}*/

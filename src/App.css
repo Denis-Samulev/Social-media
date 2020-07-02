@@ -1,0 +1,29 @@
+.app-wrapper {
+    grid-template-areas:
+    "header header"
+    "nav content";
+
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    background: #F4F9FA;
+    /*grid-gap: 10px;*/
+}
+
+Header {
+    grid-area: header;
+}
+
+Nav {
+    grid-area: nav;
+}
+
+Content {
+    grid-area: content;
+}
+
+
+.content-wrapper {
+    width: 940px;
+    margin: 0 auto;
+}
