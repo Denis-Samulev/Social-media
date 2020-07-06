@@ -17,10 +17,9 @@ const Profile = (props) => {
             <Cover />
             <AvatarDesc />
             <MyPosts postData={props.postData}
-                     addPost={props.addPost}
+                     dispatch={props.dispatch}
                      newPostText={props.newPostText}
-                     updateNewPostText={props.updateNewPostText}
-
+                     // updateNewPostText={props.updateNewPostText}
             />
 
             { postElem }

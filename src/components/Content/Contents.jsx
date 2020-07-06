@@ -14,9 +14,9 @@ const Content = (props) => {
                                                             dialogsData={props.dialogsData}/>} />
 
             <Route path='/profile' render={ () => <Profile postData={props.postData}
-                                                           addPost={props.addPost}
+                                                           dispatch={props.dispatch}
                                                            newPostText={props.newPostText}
-                                                           updateNewPostText={props.updateNewPostText}
+                                                           // updateNewPostText={props.updateNewPostText}
             />}
             />
             <Route path='/news' component= {News} />

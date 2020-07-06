@@ -3,12 +3,12 @@ let store = {
 
         profilePage: {
             postData: [
-                {id: 1, message: 'It is my first post', like:'10'},
-                {id: 2, message: 'It is important to be happy', like:'20'},
-                {id: 3, message: 'It is important to be happy', like:'30'},
-                {id: 4, message: 'It is important to be happy', like:'15'},
-                {id: 5, message: 'It is important to be happy', like:'15'},
-                {id: 6, message: 'It is important ', like:'15'}
+                {id: 1, message: 'It is my first post', like: '10'},
+                {id: 2, message: 'It is important to be happy', like: '20'},
+                {id: 3, message: 'It is important to be happy', like: '30'},
+                {id: 4, message: 'It is important to be happy', like: '15'},
+                {id: 5, message: 'It is important to be happy', like: '15'},
+                {id: 6, message: 'It is important ', like: '15'}
             ],
             newPostText: 'it-kamasutra'
         },
@@ -32,33 +32,33 @@ let store = {
             ]
         }
     },
-    getState () {
-        return this._state;
-    },
-    _callSubscriber () {
+    _callSubscriber() {
         console.log('State changed')
     },
-    addPost () {
-        let newPost = {
-            id: 7,
-            message: this._state.profilePage.newPostText,
-            like: 0
-        };
-        this._state.profilePage.postData.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber (this._state);
+
+    getState() {
+        return this._state;
     },
-    updateNewPostText (newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber (this._state);
-    },
-    subscribe (observer) {
+    subscribe(observer) {
         this._callSubscriber = observer;
+    },
+
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 7,
+                message: this._state.profilePage.newPostText,
+                like: 0
+            };
+            this._state.profilePage.postData.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+        }
     }
 }
-
-
-
 
 
 export default store;
