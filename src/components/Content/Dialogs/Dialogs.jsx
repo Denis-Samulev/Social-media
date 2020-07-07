@@ -11,8 +11,15 @@ import {Route} from "react-router-dom";
 const Dialogs = (props) => {
     return (
         <div className={s.dialogs}>
-            <Route path='/dialogs' render={ () => <Contacts  dialogsData={props.dialogsData}/>} />
-            <Route path='/dialogs' render={ () => <MessagesItems messagesData={props.messagesData}/>} />
+            <Route path='/dialogs' render={ () => <Contacts store={props.store}
+                                                            // dispatch={props.dispatch}
+                                                            // dialogsData={props.dialogsData}
+            />} />
+            <Route path='/dialogs' render={ () => <MessagesItems store={props.store}
+                                                                 // dispatch={props.dispatch}
+                                                                 // messagesData={props.messagesData}
+
+            />} />
         </div>
     )
 }

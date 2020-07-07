@@ -1,5 +1,6 @@
 import s from "../Dialogs.module.css";
 import React from "react";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../redux/state";
 
 
 const Message = (props) => {
@@ -11,29 +12,32 @@ const Message = (props) => {
 }
 
 
-let newMessElements=React.createRef();
-let addMess = () => {
-    let text = newMessElements.current.value;
-    console.log(text);
-}
-
-
-
-
 const MessagesItems = (props) => {
-    let messageElem =
-        props.messagesData.map((m) => <Message key={m.id} message={m.message} id={m.id}/>);
+    let state = props.store.getState().dialogPage;
+
+    let messageElem = state.messagesData.map((m) => <Message message={m.message} id={m.id}/>);
+    let newMessageBody = state.newMessageBody;
+
+    let onSendMessageClick = () => {
+        props.store.dispatch(sendMessageCreator())
+    }
+    let onNewMessageChange = (e) => {
+        let body = e.target.value;
+        props.store.dispatch(updateNewMessageBodyCreator(body))
+    }
 
     return (
         <div className={s.message}>
-            {messageElem}
-            
+            <div>{messageElem}</div>
             <div>
-                <textarea ref={newMessElements}></textarea>
+                <textarea value={ newMessageBody }
+                          onChange={ onNewMessageChange }
+                          placeholder={'blabla'}>
+                </textarea>
             </div>
 
             <div>
-                <button onClick={addMess}>add mess</button>
+                <button onClick={ onSendMessageClick }>send</button>
             </div>
         </div>
     )

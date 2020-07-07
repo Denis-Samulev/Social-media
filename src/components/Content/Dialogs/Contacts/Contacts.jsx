@@ -15,8 +15,9 @@ const DialogItem = (props) => {
 }
 
 const Contacts = (props) => {
+    let state = props.store.getState().dialogPage.dialogsData;
     let dialogElem =
-        props.dialogsData.map ((d) => <DialogItem key={d.id} name={d.name} id={d.id}/>);
+        state.map ((d) => <DialogItem key={d.id} name={d.name} id={d.id}/>);
 
     return (
         <div className={s.dialogsItems}>

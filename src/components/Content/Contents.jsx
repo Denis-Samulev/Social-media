@@ -10,8 +10,14 @@ import Settings from "./Settings/Settings";
 const Content = (props) => {
     return (
         <div>
-            <Route path='/dialogs' render= { () => <Dialogs messagesData={props.messagesData}
-                                                            dialogsData={props.dialogsData}/>} />
+            <Route path='/dialogs' render= { () => <Dialogs
+                                                            // dialogsData={props.dialogsData}
+                                                            store={props.store}
+                                                            // dispatch={props.dispatch}
+                                                            // messagesData={props.messagesData}
+            />}
+
+            />
 
             <Route path='/profile' render={ () => <Profile postData={props.postData}
                                                            dispatch={props.dispatch}
