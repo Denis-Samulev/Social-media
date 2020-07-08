@@ -1,4 +1,4 @@
-import s from "../Dialogs.module.css";
+import s from './Message.module.css'
 import React from "react";
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../redux/dialogsReducer";
 
@@ -28,7 +28,7 @@ const MessagesItems = (props) => {
 
     return (
         <div className={s.message}>
-            <div>{messageElem}</div>
+            <div className={s.text}>{messageElem}</div>
             <div>
                 <textarea value={ newMessageBody }
                           onChange={ onNewMessageChange }

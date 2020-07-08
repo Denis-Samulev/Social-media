@@ -1,0 +1,13 @@
+.message button {
+    background: yellow;
+    padding: 5px 15px;
+}
+
+.messageItem {
+    background: #ffffff;
+    padding: 10px;
+}
+
+.text {
+    color: green;
+}

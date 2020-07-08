@@ -13,8 +13,6 @@ const App = (props) => {
 
             <div className='content-wrapper'>
                 <Content
-                    // messagesData={props.state.dialogPage.messagesData}
-                    // dialogsData={props.state.dialogPage.dialogsData}
                     postData={props.state.profilePage.postData}
                     newPostText={props.state.profilePage.newPostText}
                     store={props.store}
