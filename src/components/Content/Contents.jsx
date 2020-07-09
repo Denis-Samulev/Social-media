@@ -10,21 +10,10 @@ import Settings from "./Settings/Settings";
 const Content = (props) => {
     return (
         <div>
-            <Route path='/dialogs' render= { () => <Dialogs
-                                                            // dialogsData={props.dialogsData}
-                                                            store={props.store}
-                                                            // dispatch={props.dispatch}
-                                                            // messagesData={props.messagesData}
-            />}
+            <Route path='/dialogs' render= { () => <Dialogs store={props.store}/>}/>
 
-            />
+            <Route path='/profile' render={ () => <Profile store={props.store}/>}/>
 
-            <Route path='/profile' render={ () => <Profile postData={props.postData}
-                                                           dispatch={props.dispatch}
-                                                           newPostText={props.newPostText}
-                                                           // updateNewPostText={props.updateNewPostText}
-            />}
-            />
             <Route path='/news' component= {News} />
             <Route path='/music' component= {Music} />
             <Route path='/settings' component= {Settings} />

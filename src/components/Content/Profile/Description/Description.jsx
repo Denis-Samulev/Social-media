@@ -6,7 +6,7 @@ const AvatarDesc = () => {
         <div className='avatarDesc'>
             <img className={s.avatar} src="https://cutt.ly/finWl8A" alt=""/>
             <div className={s.descr}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus et harum.
+                Denis S.
             </div>
         </div>
     )
