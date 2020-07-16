@@ -13,8 +13,8 @@ const App = (props) => {
 
             <div className='content-wrapper'>
                 <Content
-                    postData={props.state.profilePage.postData}
-                    newPostText={props.state.profilePage.newPostText}
+                    postData={props.state}
+                    newPostText={props.state}
                     store={props.store}
                     dispatch={props.dispatch}
                 />
